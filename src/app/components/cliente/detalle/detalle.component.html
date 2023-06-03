@@ -1,0 +1,46 @@
+<h1>Cliente</h1>
+
+<div class="container">
+    <p><a [routerLink]="['/cliente/list']">Regresar</a></p>
+    <div class="table responsive">
+        <table class="table table-dark">
+            <thead>
+              <tr>
+                <th colspan="2">Cliente</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nombre:</td>
+                <td>
+                    
+                    <span *ngIf="edit=='false'"> {{cliente.nombre}}</span>
+                    <input type="text" *ngIf="edit=='true'" [(ngModel)]="cliente.nombre">
+                </td>
+              </tr>
+              <tr>
+                  <td>Telefono:</td>
+                  <td>
+                    <span *ngIf="edit=='false'">  {{cliente.telefono}}</span>
+                    <input type="text" *ngIf="edit=='true'" [(ngModel)]="cliente.telefono">
+                </td>
+              </tr>
+              <tr>
+                  <td>Email:</td>
+                  <td>
+                    <span *ngIf="edit=='false'">  {{cliente.email}}</span>
+                    <input type="text" *ngIf="edit=='true'" [(ngModel)]="cliente.email">
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                    <button (click)="guardar()" *ngIf="edit=='true'" class="btn btn-success">{{btnText}}</button>
+                </td>
+            </tr>              
+            </tbody>
+          </table>
+    </div>
+
+</div>
